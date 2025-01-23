@@ -1,15 +1,15 @@
 @use "../abstracts/" as *;
-.home{
-    display: flex;
-    width: 100%;
-    &__left{
-        width: 20%;
-        max-height: 100%;
-    }
-    &__right{
-        width: 80%;
-        max-height: 100%;
-        background: $grey-background;
-        padding: 20px;
-    }
+.home {
+  display: flex;
+  width: 100%;
+  &__left {
+    width: 20%;
+    max-height: 100%;
+  }
+  &__right {
+    width: 80%;
+    max-height: 100%;
+    background: $grey-background;
+    padding: 20px;
+  }
 }

@@ -1,3 +1,15 @@
 @use "variables" as *;
 @use "functions" as *;
 
+//Media Query mixin
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet) and (min-width: $mobile) {
+    @content;
+  }
+}

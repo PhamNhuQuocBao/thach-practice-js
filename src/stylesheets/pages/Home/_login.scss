@@ -1,0 +1,242 @@
+@use "./../../abstracts/" as *;
+.login-container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 58% 42%;
+
+  .login-left {
+    background: $dark-gray;
+    text-align: center;
+    .login-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 1em;
+      padding: 10em;
+      .login-logo-icon-image {
+        width: 90%;
+        height: 175.85px;
+        top: 311px;
+        left: 183px;
+        @include tablet {
+          width: 100%;
+          height: 100px;
+          top: 311px;
+          left: 183px;
+        }
+      }
+      .login-logo-text {
+        font-family: Roboto;
+        color: $white-color;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 50px;
+        letter-spacing: 0.17em;
+        text-align: center;
+        @include tablet {
+          font-size: 10px;
+          font-weight: 200;
+          line-height: 20px;
+          letter-spacing: 0.1em;
+        }
+      }
+    }
+  }
+  .login-right {
+    background: $red-color;
+    display: grid;
+    align-items: center;
+    position: relative;
+    .login-form {
+      position: absolute;
+      left: -100px;
+      width: 80%;
+      min-height: 80%;
+      background-color: $grey-background;
+      border-radius: 20px;
+      .login-form__header {
+        display: flex;
+        flex-direction: column;
+        padding: auto;
+        gap: 1em;
+        margin-top: 5em;
+        text-align: center;
+        font-family: Roboto;
+        .login-form__header-text {
+          font-family: Lato;
+          font-size: 15px;
+          font-weight: 500;
+          line-height: 18px;
+          text-align: center;
+        }
+      }
+      .login-form__body {
+        margin: 1.5em 3em 1.5em 3em;
+        display: grid;
+        grid-template-rows: 40% 30% 15% 15%;
+        gap: 15px;
+        text-align: center;
+        .login-form__body__user {
+          max-width: 100%;
+          display: grid;
+          grid-template-rows: 50% 50%;
+          gap: 20px;
+          .login-form__body__user-input {
+            max-width: 100%;
+            border-radius: 2em;
+            border: 1px solid $grey-background;
+            padding: 30px;
+          }
+        }
+        .login-options {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 0px 0px 0px;
+          .login-options-remember {
+            font-family: Lato;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 18px;
+            .login-remember-input {
+              display: inline-block;
+              vertical-align: middle;
+              transform: scale(1.5);
+            }
+          }
+        }
+        .login-button {
+          border-radius: 5em;
+          background: $dark-gray;
+          color: $grey-background;
+          font-family: Lato;
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 24px;
+        }
+        .login-button:hover {
+          cursor: pointer;
+          scale: 1.1;
+        }
+        .login-form__body-text {
+          margin-top: 20px;
+        }
+        a {
+          color: $red-color;
+        }
+        a:hover {
+          scale: 1.5;
+        }
+        .login-form__body-icon {
+          position: absolute;
+          right: 5em;
+          top: 16.9em;
+        }
+        .login-form__body-icon:hover {
+          cursor: pointer;
+          scale: 1.5;
+          background: $blue-button;
+        }
+        .login-signup {
+          cursor: pointer;
+        }
+      }
+      .register-form__body {
+        grid-template-rows: 20% 20% 20% 20% 15% 5% 20%;
+        gap: 12px;
+        .register-form__body__user {
+          max-width: 100%;
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+          .register-form__body__user-input-header {
+            border-radius: 2em;
+            border: 1px solid $grey-background;
+            padding: 15px;
+          }
+        }
+        .register-form__body__user-input {
+          max-width: 100%;
+          border-radius: 2em;
+          border: 1px solid $grey-background;
+          padding: 10px;
+        }
+        .register-button {
+          border-radius: 5em;
+          background: $dark-gray;
+          color: $grey-background;
+          font-family: Lato;
+          font-size: 20px;
+          font-weight: 400;
+        }
+        .register-button:hover {
+          cursor: pointer;
+          scale: 1.1;
+          background: $blue-button;
+        }
+        .register-continue {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          .register-button-continue {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: Lato;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 10.2px;
+            text-align: left;
+            border-radius: 2em;
+            border: 1px solid $grey-background;
+            background: $blue-background;
+          }
+          .register-button-continue:hover {
+            cursor: pointer;
+            scale: 1.1;
+          }
+        }
+      }
+    }
+    .login-form-register {
+      display: none;
+    }
+    .register-line {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 600px;
+    }
+    .line {
+      flex-grow: 1;
+      height: 1px;
+      background-color: $dark-gray;
+    }
+    .text {
+      margin: 0 30px;
+      color: $dark-gray;
+      font-weight: bold;
+      font-size: 30px;
+    }
+    .red-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .circle {
+      position: absolute;
+      top: 4em;
+      left: -7em;
+      width: 5rem;
+      height: 5rem;
+      background-color: $red-color;
+      border-radius: 50%;
+      border: 10px solid $white-color;
+    }
+  }
+}

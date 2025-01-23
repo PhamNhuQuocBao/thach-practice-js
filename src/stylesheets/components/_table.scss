@@ -1,0 +1,53 @@
+@use "../abstracts/" as *;
+.table-container{
+    background: $white-color;
+    max-width: 70em;
+    height: 20em;
+    padding: 1em 0em 1em 2em;
+    border-radius: 5px;
+    .table{
+        border-radius: 2em;
+        border: 1px solid $grey-background;
+        border-collapse: collapse;
+        width: 95%;
+        text-align: left;
+        thead{
+            background: $grey-background;
+            th{
+                padding: 0.5em;
+            }
+        }
+         td {
+            text-align: left;
+            padding:  0em 0em 0em 1em;
+        }
+        .table__td {
+            display: flex;
+            justify-content: center;
+            gap: 0.5em;
+            margin: 0.5rem;
+            
+            button {
+                padding: 0.5em;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 50%;
+            }
+            .edit-btn {
+                background: $blue-button;
+                color: $white-color;
+            }
+            .delete-btn {
+                background: $red-color;
+                color: $white-color;
+            }
+            .edit-btn:hover {
+                scale: 1.1;
+            }
+            .delete-btn:hover {
+                scale: 1.1;
+            }
+        }
+    }
+}

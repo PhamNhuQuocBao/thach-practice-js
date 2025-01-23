@@ -1,21 +1,29 @@
-import "./style.css";
-import javascriptLogo from "./javascript.svg";
-import { setupCounter } from "./counter.js";
+import { Router } from "./routes.js";
+import { UserController } from "./controllers/userController.js";
+import { UserService } from "./services/userService.js";
+import { UserView } from "./views/userView.js";
 
-document.querySelector("#app").innerHTML = `
-  <div>
-    
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`;
+// Định nghĩa các route
+const routes = {
+  "": () => {
+    // Route mặc định
+    new UserController(new UserView(), new UserService());
+  },
+  users: () => {
+    // Route dành cho UserController
+    new UserController(new UserView(), new UserService());
+  },
+  adđmember: () => {
+    // Route thêm thành viên
+    new UserController(new UserView(), new UserService());
+  },
 
-setupCounter(document.querySelector("#counter"));
+  404: () => {
+    // Route không tìm thấy
+    const app = document.getElementById("app");
+    app.innerHTML = "<h1>Page not found</h1>";
+  },
+};
+
+// Khởi tạo Router với các route đã định nghĩa
+new Router(routes);

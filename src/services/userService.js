@@ -33,7 +33,7 @@ export class UserService {
   }
   //get Account
   async getAccount() {
-    const response = await axiosInstance.get("/account");
+    const response = await axiosInstance.get("/accounts");
     return response.data;
   }
 }
